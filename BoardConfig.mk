@@ -19,3 +19,6 @@ include vendor/samsung/m307f/BoardConfigVendor.mk
 DEVICE_PATH := device/samsung/m307f
 
 PRODUCT_PLATFORM := universal9611
+
+# APEX IMAGE #
+DEXPREOPT_GENERATE_APEX_IMAGE := true
