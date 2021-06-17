@@ -14,7 +14,6 @@
 # limitations under the License.
 
 include device/samsung/m30s-common/BoardConfigCommon.mk
-include vendor/samsung/m307f/BoardConfigVendor.mk
 
 DEVICE_PATH := device/samsung/m307f
 
