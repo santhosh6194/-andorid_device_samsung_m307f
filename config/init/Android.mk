@@ -12,27 +12,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-include device/samsung/m30s-common/BoardConfigCommon.mk
-include vendor/samsung/m307f/BoardConfigVendor.mk
+LOCAL_PATH := $(call my-dir)
 
-DEVICE_PATH := device/samsung/m307f
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.vendor.rilchip.rc
+LOCAL_SRC_FILES := init.vendor.rilchip.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/init
+include $(BUILD_PREBUILT)
 
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/device_manifest.xml
-
-PRODUCT_PLATFORM := universal9611
-
-TARGET_OTA_ASSERT_DEVICE := m307f,m30s,m30sdd
-
-# APEX IMAGE #
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
-# KERNEL #
-TARGET_KERNEL_CONFIG := m307f_defconfig
-
-# PROPS #
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-
-# VENDOR SECURITY PATCH DATE #
-VENDOR_SECURITY_PATCH := 2021-05-01
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.vendor.rilcommon.rc
+LOCAL_SRC_FILES := init.vendor.rilcommon.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/init
+include $(BUILD_PREBUILT)
